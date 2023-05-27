@@ -9,6 +9,8 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 .container {
   width: 90%;
@@ -16,6 +18,11 @@ body {
   max-width: 450px;
   border: 2px solid black;
   padding: 1rem;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .calculator-head {
   display: flex;
@@ -30,16 +37,23 @@ body {
   height: 15px;
   width: 30px;
   border-radius: 12px;
-  background-color: brown;
+  background-color: rgb(92, 56, 45);
+}
+.brand-name {
+  color: cadetblue;
 }
 .calculator-display {
-  border: 2px solid black;
-  height: 6rem;
-  margin-bottom: 1rem;
+  border: 2px solid white;
+  height: 8rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: flex-end;
   align-items: end;
   padding: 1rem;
+  border-radius: 4px;
+  background-color: rgb(34, 29, 29);
+  color: white;
+  font-size: 1.5rem;
 }
 .calculator-body {
   display: grid;
@@ -48,10 +62,26 @@ body {
 }
 .button {
   text-align: center;
-  padding: 1.6rem 1.8rem;
+  padding: 1.5rem 1rem;
   border: 1px solid black;
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(40, 37, 37);
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+.clear {
+  background-color: rgb(255, 45, 45);
+}
+.backspace {
+  color: orange;
+}
+.operator {
+  color: rgb(0, 153, 255);
+  font-size: 1.5rem;
 }
 .equal-to {
   grid-column-start: 3;
   grid-column-end: -1;
+  background-color: rgb(2, 163, 42);
 }
