@@ -14,17 +14,12 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
   return num1 / num2;
 }
-// modulus
-function modulus(num1) {
-  return num1 / 100;
-}
 
 let previousValue = "";
 let currentValue = "";
 let operator = "";
 
 function operate(operator, num1, num2) {
-  console.log(operator(num1, num2));
   return operator(num1, num2);
 }
 
@@ -48,7 +43,6 @@ operatorButtons.forEach((operatorBtn) => {
     previousValue = currentValue;
     currentValue = "";
     calculatorDisplay.textContent = previousValue + " " + operator;
-    console.log(previousValue + operator);
   });
 });
 
@@ -59,40 +53,51 @@ equalToButton.addEventListener("click", () => {
   currentValue = Number(currentValue);
   switch (operator) {
     case "+":
-      console.log(operator, previousValue, currentValue);
       calculatorDisplay.textContent = operate(add, previousValue, currentValue);
+      currentValue = calculatorDisplay.textContent;
       break;
     case "-":
-      console.log(operator, previousValue, currentValue);
-
       calculatorDisplay.textContent = operate(
         subtract,
         previousValue,
         currentValue
       );
+      currentValue = calculatorDisplay.textContent;
       break;
     case "×":
-      console.log(operator, previousValue, currentValue);
       calculatorDisplay.textContent = operate(
         multiply,
         previousValue,
         currentValue
       );
+      currentValue = calculatorDisplay.textContent;
       break;
     case "÷":
-      console.log(operator, previousValue, currentValue);
       calculatorDisplay.textContent = operate(
         divide,
         previousValue,
         currentValue
       );
-      break;
-    case "%":
-      console.log(operator, previousValue);
-      calculatorDisplay.textContent = operate(modulus, previousValue);
+      currentValue = calculatorDisplay.textContent;
       break;
     default:
       console.log("Error");
       break;
   }
+});
+
+// modulus operator
+const modulusBtn = document.querySelector(".modulus");
+modulusBtn.addEventListener("click", () => {
+  calculatorDisplay.textContent = calculatorDisplay.textContent / 100;
+  currentValue = calculatorDisplay.textContent;
+});
+
+// adding functionality to clear button
+const clearAllButton = document.querySelector(".clear");
+clearAllButton.addEventListener("click", () => {
+  calculatorDisplay.textContent = "";
+  previousValue = "";
+  currentValue = "";
+  operator = "";
 });
